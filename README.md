@@ -51,3 +51,5 @@ The model is trained on a labeled image dataset (e.g., CIFAR-10, or a custom dat
 2. Run the notebook or deploy the app using Streamlit<br>
 3. Upload your image and get predictions in real-time
 </blockquote>
+
+Special Thanks to Varshith and ChatGPT to Guide and help me setup my GitHub Repo
