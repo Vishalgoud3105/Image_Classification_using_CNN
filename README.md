@@ -1,55 +1,99 @@
-<h1 align="center">🖼️ Image Classification Model</h1>
+<h1 align="center">🖼️ CIFAR-10 Image Classification using CNN</h1>
 
 <h3>🧩 Problem Statement</h3>
 <blockquote>
-With the explosion of visual data in various industries—from healthcare and agriculture to security and e-commerce—accurately identifying and classifying images has become a crucial challenge. Manual analysis is time-consuming, error-prone, and not scalable. There's a growing need for intelligent systems that can classify images efficiently and accurately to support decision-making and automation.
+In the field of computer vision, accurate image classification is critical for applications ranging from autonomous vehicles to healthcare. This project aims to build a deep learning model that can classify images from the CIFAR-10 dataset — a widely used dataset for benchmarking image classification tasks. The challenge is to develop a robust Convolutional Neural Network (CNN) that can learn to identify 10 mutually exclusive object categories from low-resolution images.
 </blockquote>
 
-<h3>💡 Proposed Solution</h3>
+<h3>💡 Project Description</h3>
 <blockquote>
-This project presents an automated image classification system powered by deep learning. Leveraging Convolutional Neural Networks (CNNs), the model learns to recognize visual patterns and accurately classify images into predefined categories. The solution is designed to be scalable, adaptable, and efficient for various real-world applications such as object recognition, quality control, and content moderation.
-</blockquote>
-
-<h3>🛠️ Technical Stack Description</h3>
-<blockquote>
-The model was developed using a robust and modular approach, utilizing the following technologies and frameworks:
+The CIFAR-10 dataset contains <strong>60,000 32x32 color images</strong> across <strong>10 classes</strong>, with 6,000 images per class. The dataset is split into <strong>50,000 training</strong> and <strong>10,000 test images</strong>. Each image is categorized as one of the following:
 <ul>
-  <li><strong>Python:</strong> Core programming language</li>
-  <li><strong>TensorFlow & Keras:</strong> For building and training CNN-based image classifiers</li>
-  <li><strong>OpenCV:</strong> For image preprocessing and transformation</li>
-  <li><strong>Google Colab:</strong> For model development and experimentation in the cloud</li>
-  <li><strong>Streamlit:</strong> For building an interactive web interface for image upload and prediction</li>
+  <li>✈️ Airplane</li>
+  <li>🚗 Automobile</li>
+  <li>🐦 Bird</li>
+  <li>🐱 Cat</li>
+  <li>🦌 Deer</li>
+  <li>🐶 Dog</li>
+  <li>🐸 Frog</li>
+  <li>🐴 Horse</li>
+  <li>🚢 Ship</li>
+  <li>🚚 Truck</li>
 </ul>
-
-The model is trained on a labeled image dataset (e.g., CIFAR-10, or a custom dataset uploaded by the user). After training, users can upload new images via a web interface to get real-time classification results with probability scores.
+The model uses a CNN architecture implemented using TensorFlow’s Keras API. It is trained to identify these categories with high accuracy. 
 </blockquote>
 
-<h3>📂 Features</h3>
+<h3>🛠️ Technical Stack</h3>
 <blockquote>
 <ul>
-  <li>✅ End-to-end image classification system</li>
-  <li>📊 Model accuracy visualization with training history</li>
-  <li>📤 Real-time image upload and prediction via web UI</li>
-  <li>🖼️ Supports various image types and formats</li>
-  <li>⚙️ Easily customizable to other datasets and classes</li>
+  <li><strong>Language:</strong> Python</li>
+  <li><strong>Frameworks & Libraries:</strong> TensorFlow, Keras, NumPy, Matplotlib</li>
+  <li><strong>Dataset:</strong> CIFAR-10 (imported using <code>tensorflow.keras.datasets</code>)</li>
+  <li><strong>Development Platform:</strong> Google Colab / Jupyter Notebook</li>
 </ul>
 </blockquote>
 
-<h3>📈 Potential Applications</h3>
+<h3>⚙️ Steps Followed</h3>
+<blockquote>
+<ol>
+  <li>📥 <strong>Import & Load Dataset</strong>: CIFAR-10 data loaded from TensorFlow</li>
+  <li>🧼 <strong>Data Preprocessing</strong>:
+    <ul>
+      <li>Normalized pixel values (0–255 → 0–1)</li>
+      <li>Labels converted to categorical format</li>
+      <li>Data reshaped as needed for CNN input</li>
+    </ul>
+  </li>
+  <li>🏗️ <strong>Model Building</strong>: 
+    <ul>
+      <li>Sequential CNN with Conv2D → MaxPooling → Dropout</li>
+      <li>Dense layers for classification with Softmax output</li>
+    </ul>
+  </li>
+  <li>🧠 <strong>Model Training</strong>: Trained using 10 epochs with Adam optimizer and categorical cross-entropy loss</li>
+  <li>📊 <strong>Model Evaluation</strong>: 
+    <ul>
+      <li>Loss vs Validation Loss</li>
+      <li>Accuracy vs Validation Accuracy</li>
+    </ul>
+  </li>
+  <li>🔍 <strong>Testing & Predictions</strong>:
+    <ul>
+      <li>Predictions generated on test set</li>
+      <li>Confusion Matrix and Classification Report calculated</li>
+    </ul>
+  </li>
+</ol>
+</blockquote>
+
+<h3>📈 Results</h3>
 <blockquote>
 <ul>
-  <li>🔍 Defect detection in manufacturing</li>
-  <li>🧫 Disease diagnosis from medical images</li>
-  <li>🚗 Object detection in autonomous vehicles</li>
-  <li>🌾 Crop disease recognition in agriculture</li>
+  <li>✅ Achieved ~70% accuracy using CNN on CIFAR-10</li>
+  <li>🧠 Significantly outperforms a standard ANN (~40%)</li>
+  <li>🔄 MaxPooling and Dropout improved generalization and reduced overfitting</li>
 </ul>
 </blockquote>
 
 <h3>🚀 How to Run</h3>
 <blockquote>
-1. Clone the repo<br>
-2. Run the notebook or deploy the app using Streamlit<br>
-3. Upload your image and get predictions in real-time
+1. Clone the repository  
+2. Open the Jupyter/Colab notebook  
+3. Run each cell in order to preprocess, train, and evaluate the model  
+4. Modify or experiment with the CNN layers to improve performance
 </blockquote>
 
-Special Thanks to Varshith and ChatGPT to Guide and help me setup my GitHub Repo
+<h3>📦 Dataset Access</h3>
+<blockquote>
+Dataset is available via TensorFlow:
+<pre>
+from tensorflow.keras.datasets import cifar10  
+(x_train, y_train), (x_test, y_test) = cifar10.load_data()
+</pre>
+</blockquote>
+
+<h3>🔗 Credits</h3>
+<blockquote>
+Developed by <strong>C. Vishal Goud</strong> as part of the Artificial Intelligence Major Project, November Batch  
+CIFAR-10 Dataset: Alex Krizhevsky, Vinod Nair, and Geoffrey Hinton
+</blockquote>
