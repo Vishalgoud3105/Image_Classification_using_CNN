@@ -69,8 +69,7 @@ The model uses a CNN architecture implemented using TensorFlow’s Keras API. It
 <h3>📈 Results</h3>
 <blockquote>
 <ul>
-  <li>✅ Achieved ~70% accuracy using CNN on CIFAR-10</li>
-  <li>🧠 Significantly outperforms a standard ANN (~40%)</li>
+  <li>✅ Achieved ~87% accuracy using CNN on CIFAR-10</li>
   <li>🔄 MaxPooling and Dropout improved generalization and reduced overfitting</li>
 </ul>
 </blockquote>
