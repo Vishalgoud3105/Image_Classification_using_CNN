@@ -93,6 +93,6 @@ from tensorflow.keras.datasets import cifar10
 
 <h3>🔗 Credits</h3>
 <blockquote>
-Developed by <strong>C. Vishal Goud</strong> as part of the Artificial Intelligence Major Project, November Batch  
+Developed by <strong>C. Vishal Goud</strong> as part of the Artificial Intelligence Major Project, November Batch-2023  
 CIFAR-10 Dataset: Alex Krizhevsky, Vinod Nair, and Geoffrey Hinton
 </blockquote>
